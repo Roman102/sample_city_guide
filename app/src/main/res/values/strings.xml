@@ -5,6 +5,4 @@
     <string name="parks">Parks</string>
     <string name="historical_sites">Historical sites</string>
     <string name="historical_people">Historical people</string>
-
-    <string name="section_format">Hello World from section: %1$d</string>
 </resources>
