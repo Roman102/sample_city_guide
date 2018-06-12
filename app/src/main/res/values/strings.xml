@@ -5,4 +5,29 @@
     <string name="parks">Parks</string>
     <string name="historical_sites">Historical sites</string>
     <string name="historical_people">Historical people</string>
+
+    <string name="sample_event_1">Sample Event 1</string>
+    <string name="sample_event_2">Sample Event 2</string>
+
+    <string name="sample_park_1">Sample Park 1</string>
+    <string name="sample_park_2">Sample Park 2</string>
+
+    <string name="sample_historical_site_1">Sample Historical Site 1</string>
+    <string name="sample_historical_site_2">Sample Historical Site 2</string>
+
+    <string name="historical_person_1">Historical person 1</string>
+    <string name="historical_person_2">Historical person 2</string>
+    <string name="historical_person_3">Historical person 3</string>
+    <string name="historical_person_4">Historical person 4</string>
+
+    <string name="SAMPLE_EVENT_1_S_LONG_DESCRIPTION">Sample Event 1\'s long description</string>
+    <string name="SAMPLE_EVENT_2_S_LONG_DESCRIPTION">Sample Event 2\'s long description</string>
+    <string name="SAMPLE_PARK_1_S_LONG_DESCRIPTION">Sample Park 1\'s long description</string>
+    <string name="SAMPLE_PARK_2_S_LONG_DESCRIPTION">Sample Park 2\'s long description</string>
+    <string name="SAMPLE_HISTORICAL_SITE_1_S_DESCRIPTION">Sample Historical Site 1\'s description</string>
+    <string name="SAMPLE_HISTORICAL_SITE_2_S_DESCRIPTION">Sample Historical Site 2\'s description</string>
+    <string name="HISTORICAL_PERSON_1_S_BIOGRAPHY">Historical person 1\'s biography</string>
+    <string name="HISTORICAL_PERSON_2_S_BIOGRAPHY">Historical person 2\'s biography</string>
+    <string name="HISTORICAL_PERSON_3_S_BIOGRAPHY">Historical person 3\'s biography</string>
+    <string name="HISTORICAL_PERSON_4_S_BIOGRAPHY">Historical person 4\'s biography</string>
 </resources>

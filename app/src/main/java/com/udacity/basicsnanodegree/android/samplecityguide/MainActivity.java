@@ -27,10 +27,10 @@ public class MainActivity extends AppCompatActivity {
          *  Set up the {@link ViewPager}, that will host the section contents, with the sections adapter.
          */
 
-        ViewPager viewPager = (ViewPager) findViewById(R.id.container);
-        viewPager.setAdapter(new SectionsPagerAdapter(getSupportFragmentManager()));
+        ViewPager viewPager = findViewById(R.id.container);
+        viewPager.setAdapter(new SectionsPagerAdapter(getSupportFragmentManager(), this));
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        TabLayout tabLayout = findViewById(R.id.tabs);
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(viewPager));

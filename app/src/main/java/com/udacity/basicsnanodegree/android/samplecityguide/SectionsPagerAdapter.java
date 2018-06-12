@@ -1,5 +1,6 @@
 package com.udacity.basicsnanodegree.android.samplecityguide;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -18,8 +19,12 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     private static final int LIST_ITEMS_FOR_HISTORICAL_SITES_TAB = 2;
     private static final int LIST_ITEMS_FOR_HISTORICAL_PEOPLE_TAB = 3;
 
-    SectionsPagerAdapter(FragmentManager fm) {
+    private final Context context;
+
+    SectionsPagerAdapter(FragmentManager fm, Context c) {
         super(fm);
+
+        context = c;
     }
 
     @Override
@@ -33,22 +38,22 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         switch (position) {
             case LIST_ITEMS_FOR_EVENTS_TAB:
-                tourGuideItems.add(new TourGuideItem("Sample Event 1", "Sample Event 1's long description", R.drawable.sample_event_1));
-                tourGuideItems.add(new TourGuideItem("Sample Event 2", "Sample Event 2's long description", R.drawable.sample_event_2));
+                tourGuideItems.add(new TourGuideItem(context.getString(R.string.sample_event_1), context.getString(R.string.SAMPLE_EVENT_1_S_LONG_DESCRIPTION), R.drawable.sample_event_1));
+                tourGuideItems.add(new TourGuideItem(context.getString(R.string.sample_event_2), context.getString(R.string.SAMPLE_EVENT_2_S_LONG_DESCRIPTION), R.drawable.sample_event_2));
                 break;
             case LIST_ITEMS_FOR_PARKS_TAB:
-                tourGuideItems.add(new TourGuideItem("Sample Park 1", "Sample Park 1's long description", R.drawable.sample_park_1));
-                tourGuideItems.add(new TourGuideItem("Sample Park 2", "Sample Park 2's long description", R.drawable.sample_park_2));
+                tourGuideItems.add(new TourGuideItem(context.getString(R.string.sample_park_1), context.getString(R.string.SAMPLE_PARK_1_S_LONG_DESCRIPTION), R.drawable.sample_park_1));
+                tourGuideItems.add(new TourGuideItem(context.getString(R.string.sample_park_2), context.getString(R.string.SAMPLE_PARK_2_S_LONG_DESCRIPTION), R.drawable.sample_park_2));
                 break;
             case LIST_ITEMS_FOR_HISTORICAL_SITES_TAB:
-                tourGuideItems.add(new TourGuideItem("Sample Historical Site 1", "Sample Historical Site 1's description", R.drawable.sample_historical_site_1));
-                tourGuideItems.add(new TourGuideItem("Sample Historical Site 2", "Sample Historical Site 2's description", R.drawable.sample_historical_site_2));
+                tourGuideItems.add(new TourGuideItem(context.getString(R.string.sample_historical_site_1), context.getString(R.string.SAMPLE_HISTORICAL_SITE_1_S_DESCRIPTION), R.drawable.sample_historical_site_1));
+                tourGuideItems.add(new TourGuideItem(context.getString(R.string.sample_historical_site_2), context.getString(R.string.SAMPLE_HISTORICAL_SITE_2_S_DESCRIPTION), R.drawable.sample_historical_site_2));
                 break;
             case LIST_ITEMS_FOR_HISTORICAL_PEOPLE_TAB:
-                tourGuideItems.add(new TourGuideItem("Historical person 1", "Historical person 1's biography", R.drawable.historical_person_1));
-                tourGuideItems.add(new TourGuideItem("Historical person 2", "Historical person 2's biography", R.drawable.historical_person_2));
-                tourGuideItems.add(new TourGuideItem("Historical person 3", "Historical person 3's biography", R.drawable.historical_person_3));
-                tourGuideItems.add(new TourGuideItem("Historical person 4", "Historical person 4's biography", R.drawable.historical_person_4));
+                tourGuideItems.add(new TourGuideItem(context.getString(R.string.historical_person_1), context.getString(R.string.HISTORICAL_PERSON_1_S_BIOGRAPHY), R.drawable.historical_person_1));
+                tourGuideItems.add(new TourGuideItem(context.getString(R.string.historical_person_2), context.getString(R.string.HISTORICAL_PERSON_2_S_BIOGRAPHY), R.drawable.historical_person_2));
+                tourGuideItems.add(new TourGuideItem(context.getString(R.string.historical_person_3), context.getString(R.string.HISTORICAL_PERSON_3_S_BIOGRAPHY), R.drawable.historical_person_3));
+                tourGuideItems.add(new TourGuideItem(context.getString(R.string.historical_person_4), context.getString(R.string.HISTORICAL_PERSON_4_S_BIOGRAPHY), R.drawable.historical_person_4));
                 break;
         }
 

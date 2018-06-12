@@ -27,7 +27,7 @@ public class TourGuideFragment extends Fragment {
         TourGuideItemAdapter tourGuideItemAdapter = new TourGuideItemAdapter(getActivity(), tourGuideItems);
 
         // Get a reference to the ListView, and attach the adapter to the listView.
-        ListView listView = (ListView) rootView.findViewById(R.id.listview_flavor);
+        ListView listView = rootView.findViewById(R.id.listview_flavor);
         listView.setAdapter(tourGuideItemAdapter);
 
         return rootView;

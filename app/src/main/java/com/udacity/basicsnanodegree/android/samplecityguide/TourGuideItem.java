@@ -2,6 +2,8 @@ package com.udacity.basicsnanodegree.android.samplecityguide;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 /**
  * {@link TourGuideItem} is a list item with a description for an event, historical site, etc.
@@ -23,11 +25,12 @@ public class TourGuideItem implements Parcelable {
 
     };
 
-    private String mTitle;
-    private String mDescription;
+    private String title;
+
+    private String description;
 
     // Drawable resource ID
-    private int mImageResourceId;
+    private int imageResourceId;
 
     /*
      * Create a new TourGuideItem object.
@@ -37,38 +40,37 @@ public class TourGuideItem implements Parcelable {
      * @param image is a drawable reference ID that corresponds to the list item.
      * */
     TourGuideItem(String vTitle, String vDescription, int imageResourceId) {
-        mTitle = vTitle;
-        mDescription = vDescription;
-        mImageResourceId = imageResourceId;
+        title = vTitle;
+        description = vDescription;
+        this.imageResourceId = imageResourceId;
     }
 
     private TourGuideItem(Parcel in) {
-        mTitle = in.readString();
-        mDescription = in.readString();
-        mImageResourceId = in.readInt();
+        title = in.readString();
+        description = in.readString();
+        imageResourceId = in.readInt();
     }
 
     /**
      * Get the short title for the list item.
      */
     public String getTitle() {
-        return mTitle;
+        return title;
     }
 
     /**
      * Get the detailed description of the list item.
      */
     public String getDescription() {
-        return mDescription;
+        return description;
     }
 
     /**
      * Get the image resource ID
      */
     public int getImageResourceId() {
-        return mImageResourceId;
+        return imageResourceId;
     }
-
 
     @Override
     public int describeContents() {
@@ -77,9 +79,18 @@ public class TourGuideItem implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(mTitle);
-        dest.writeString(mDescription);
-        dest.writeInt(mImageResourceId);
+        dest.writeString(title);
+        dest.writeString(description);
+        dest.writeInt(imageResourceId);
+    }
+
+    // The ViewHolder caches the TextViews and ImageView.
+    static class ViewHolderItem {
+
+        public TextView titleTextView;
+        public TextView descriptionTextView;
+        public ImageView iconView;
+
     }
 
 }

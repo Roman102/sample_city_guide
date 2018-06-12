@@ -43,38 +43,47 @@ public class TourGuideItemAdapter extends ArrayAdapter<TourGuideItem> {
      */
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        // Check if the existing view is being reused, otherwise inflate the view
-        View listItemView = convertView;
-
-        if (listItemView == null) {
-            listItemView = LayoutInflater.from(getContext()).inflate(
-                    R.layout.list_item, parent, false);
-        }
+        TourGuideItem.ViewHolderItem viewHolder;
 
         // Get the {@link TourGuideItem} object located at this position in the list
         TourGuideItem currentTourGuideItem = getItem(position);
 
-        // Find the TextView in the list_item.xml layout with the ID title_
-        TextView titleTextView = (TextView) listItemView.findViewById(R.id.title_);
+        // Check if the existing view is being reused, otherwise inflate the view
+        if (null == convertView) {
+            convertView = LayoutInflater.from(getContext()).inflate(
+                    R.layout.list_item, parent, false);
+
+            viewHolder = new TourGuideItem.ViewHolderItem();
+
+            // Find the TextView in the list_item.xml layout with the ID title_
+            viewHolder.titleTextView = convertView.findViewById(R.id.title_);
+
+            // Find the TextView in the list_item.xml layout with the ID description_
+            viewHolder.descriptionTextView = convertView.findViewById(R.id.description_);
+
+            // Find the ImageView in the list_item.xml layout with the ID list_item_icon
+            viewHolder.iconView = convertView.findViewById(R.id.list_item_icon);
+
+            convertView.setTag(viewHolder);
+        } else {
+            viewHolder = (TourGuideItem.ViewHolderItem) convertView.getTag();
+        }
+
         // Get the title from the current TourGuideItem object and
         // set this text on the title-TextView
-        titleTextView.setText(currentTourGuideItem.getTitle());
+        viewHolder.titleTextView.setText(currentTourGuideItem.getTitle());
 
-        // Find the TextView in the list_item.xml layout with the ID description_
-        TextView descriptionTextView = (TextView) listItemView.findViewById(R.id.description_);
         // Get the description from the current TourGuideItem object and
         // set this text on the description-TextView
-        descriptionTextView.setText(currentTourGuideItem.getDescription());
+        viewHolder.descriptionTextView.setText(currentTourGuideItem.getDescription());
 
-        // Find the ImageView in the list_item.xml layout with the ID list_item_icon
-        ImageView iconView = (ImageView) listItemView.findViewById(R.id.list_item_icon);
         // Get the image resource ID from the current TourGuideItem object and
         // set the image to iconView
-        iconView.setImageResource(currentTourGuideItem.getImageResourceId());
+        viewHolder.iconView.setImageResource(currentTourGuideItem.getImageResourceId());
 
         // Return the whole list item layout (containing 2 TextViews and an ImageView)
         // so that it can be shown in the ListView
-        return listItemView;
+        return convertView;
     }
 
 }
